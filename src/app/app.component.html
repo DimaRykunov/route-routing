@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Angular 2 + maps</h1>
+    <div class="form-group col-4">
+        <input placeholder="From" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search1 [formControl]="searchControl" [(ngModel)]='ng_address1'>
+    </div>
+    <div class="form-group col-4">
+        <input placeholder="To" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search2 [formControl]="searchControl" [(ngModel)]='ng_address2'>
+    </div>
+    <div class="form-group col-1">
+        <button class="btn btn-default" type="button" (click)="geocodeAddress()">Get</button>
+    </div>
+</div>
+<agm-map [latitude]="dir.origin.lat" [longitude]="dir.destination.lng">
+    <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+</agm-map>
